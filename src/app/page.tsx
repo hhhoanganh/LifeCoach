@@ -5,6 +5,7 @@ import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from '../../componen
 import { fetchCars } from '../../utils';
 import { fuels,yearsOfProduction } from '../../constants';
 import { HomeProps } from '../../types';
+import { v4 as uuidv4} from 'uuid';
 
 
 export default async function Home({ searchParams }: HomeProps) {
@@ -40,7 +41,7 @@ export default async function Home({ searchParams }: HomeProps) {
       {!isDataEmpty ?(
         <section>
           <div className='home__cars-wrapper'>
-            {allCars?.map((car) => (<CarCard car={car}/>))}
+            {allCars?.map((car) => (<CarCard key={uuidv4()} car={car} />))}
             </div>
 
             <ShowMore 
