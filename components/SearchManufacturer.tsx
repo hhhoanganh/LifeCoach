@@ -10,8 +10,6 @@ import { manufacturers } from "../constants";
 const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacturerProps) => {
     const [query, setQuery] = useState('');
 
-
-
     const filteredManufacturer =
         query === ""
             ? manufacturers
